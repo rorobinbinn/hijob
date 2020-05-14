@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// Reset before importing new base css
 import './reset.css';
+import './index.css';
 import Routes from './Routes';
 import * as serviceWorker from './serviceWorker';
 

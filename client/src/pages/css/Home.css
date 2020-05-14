@@ -1,0 +1,19 @@
+.hero_section {
+  min-height: 100vh;
+  background: url('../../assets/hero-image.png');
+  background-repeat: no-repeat;
+  background-position: 54vw;
+  background-size: 50vw;
+  background-color: #dbeffd;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+.hero_container {
+  max-width: 39vw;
+}
