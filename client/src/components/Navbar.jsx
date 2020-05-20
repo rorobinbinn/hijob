@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './css/Navbar.css';
-import classNames from 'classnames';
 
 class Navbar extends Component {
   constructor(props) {
