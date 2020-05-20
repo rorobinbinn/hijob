@@ -1,0 +1,52 @@
+:root {
+  --primary: #5a53f2;
+  --light: #f9feff;
+
+  /* Shades of Primary */
+  --primary-shade-1: #514bda;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 4.5em;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-primary:active {
+  background-color: var(--primary-shade-1);
+}
+
+input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: unset;
+}
