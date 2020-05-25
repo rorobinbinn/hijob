@@ -19,16 +19,22 @@
   transition: font-size 0.3s ease;
 }
 
+.logo:hover {
+  border: none;
+}
+
 .nav_link {
   font-size: 20px;
   margin-left: 40px;
   user-select: none;
   transition: font-size 0.3s ease, opacity 0.2s ease-out;
   font-weight: 600;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .nav_link:hover {
-  text-decoration: underline;
+  border-bottom: dashed 2px black;
 }
 
 .nav_link:active {

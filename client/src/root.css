@@ -23,6 +23,7 @@ body {
 .btn-primary {
   background-color: var(--primary);
   color: var(--light);
+  transition: opacity 0.3s ease-out;
 }
 
 .btn-primary:hover {
