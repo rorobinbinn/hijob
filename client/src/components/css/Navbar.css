@@ -3,23 +3,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 100px;
+  padding: 55px 73px;
   box-sizing: border-box;
   width: 100vw;
   transition: all 0.3s ease;
 }
 
 .logo {
-  width: 140px;
-  margin-right: 10px;
-  transition: all 0.3s ease;
+  font-weight: 800;
+  font-size: 46px;
+  letter-spacing: -1.15px;
+  color: #5a54f2;
+  user-select: none;
+  margin-right: 5px;
+  transition: font-size 0.3s ease;
 }
 
 .nav_link {
-  font-size: 24px;
-  margin-left: 50px;
+  font-size: 20px;
+  margin-left: 40px;
   user-select: none;
-  transition: all 0.3s ease;
+  transition: font-size 0.3s ease, opacity 0.2s ease-out;
+  font-weight: 600;
 }
 
 .nav_link:hover {
@@ -36,9 +41,10 @@
 }
 
 .nav-btn {
-  padding: 20px 40px;
-  font-weight: 600;
-  font-size: 1.5em;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  padding: 15px 36px;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: font-size 0.3s ease, opacity 0.3s ease-out;
 }

@@ -8,15 +8,9 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Muli', 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  font-size: 4.5em;
-  font-weight: 600;
-  line-height: 1.2em;
 }
 
 .btn {

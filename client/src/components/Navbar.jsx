@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/Navbar.css';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Navbar extends Component {
 
   componentDidMount() {
     document.body.onscroll = (ev) => {
-      if (ev.target.scrollingElement.scrollTop < 45)
+      if (ev.target.scrollingElement.scrollTop < 10)
         return this.setState({ scrolled: false });
 
       return this.setState({ scrolled: true });
@@ -27,63 +28,61 @@ class Navbar extends Component {
           this.state.scrolled
             ? {
                 backgroundColor: 'white',
-                padding: '15px 100px',
+                padding: '20px 73px',
                 position: 'fixed',
               }
             : {}
         }
       >
         <div className='link_container'>
-          <div href='#'>
-            <img
-              src={require('../assets/logo.png')}
-              alt='Logo'
-              className='logo'
-              style={this.state.scrolled ? { width: '100px', marginTop: '5px' } : {}}
-            />
-          </div>
+          <Link
+            className='logo'
+            to='/'
+            style={this.state.scrolled ? { fontSize: '38px' } : {}}
+          >
+            hijob!
+          </Link>
 
-          <div
+          <Link
             className='nav_link'
-            href='#'
             style={this.state.scrolled ? { fontSize: '16px' } : {}}
+            to='/'
           >
             How it works
-          </div>
+          </Link>
 
-          <div
+          <Link
             className='nav_link'
-            href='#'
             style={this.state.scrolled ? { fontSize: '16px' } : {}}
+            to='/'
           >
             Explore
-          </div>
+          </Link>
 
-          <div
+          <Link
             className='nav_link'
-            href='#'
             style={this.state.scrolled ? { fontSize: '16px' } : {}}
+            to='/'
           >
             Company
-          </div>
+          </Link>
 
-          <div
+          <Link
             className='nav_link'
-            href='#'
             style={this.state.scrolled ? { fontSize: '16px' } : {}}
+            to='/'
           >
             Plans
-          </div>
+          </Link>
         </div>
 
-        <div
+        <Link
           className='btn btn-primary nav-btn'
-          style={
-            this.state.scrolled ? { padding: '15px 25px', fontSize: '16px' } : {}
-          }
+          to='/'
+          style={this.state.scrolled ? { fontSize: '18px' } : {}}
         >
           Login
-        </div>
+        </Link>
       </div>
     );
   }
