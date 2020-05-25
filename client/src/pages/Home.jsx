@@ -54,6 +54,7 @@ export default class Home extends Component {
                 <a
                   href='https://dribbble.com/uiwithvin'
                   className='author_name'
+                  target='_blank'
                 >
                   Steve Gunawan
                 </a>{' '}
@@ -61,6 +62,7 @@ export default class Home extends Component {
                 <a
                   href='https://linkedin.com/in/robinson-ody'
                   className='author_name'
+                  target='_blank'
                 >
                   Robinson Ody
                 </a>
