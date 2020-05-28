@@ -27,7 +27,7 @@
   font-size: 20px;
   margin-left: 40px;
   user-select: none;
-  transition: font-size 0.3s ease, opacity 0.2s ease-out;
+  transition: font-size 0.3s ease;
   font-weight: 600;
   padding-bottom: 5px;
   padding-top: 5px;

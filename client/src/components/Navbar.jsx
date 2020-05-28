@@ -30,6 +30,7 @@ class Navbar extends Component {
                 backgroundColor: 'white',
                 padding: '20px 73px',
                 position: 'fixed',
+                zIndex: 10,
               }
             : {}
         }

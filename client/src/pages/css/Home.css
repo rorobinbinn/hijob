@@ -1,3 +1,4 @@
+/* First Section: Hero */
 .hero_section {
   min-height: 100vh;
   background-color: #dbeffd;
@@ -15,14 +16,14 @@
 
 .hero_wrap {
   display: flex;
-  padding-top: 10vh;
+  padding-top: 100px;
   padding-left: 10vw;
   margin: auto;
 }
 
 .container-left {
   width: 50%;
-  padding-top: 20vh;
+  padding-top: 150px;
 }
 
 .container-right {
@@ -75,4 +76,168 @@
 .author_name:hover {
   border-bottom: dashed 2px var(--primary);
   padding-bottom: 2px;
+}
+
+/* Second Section: As used by */
+.as_used_by {
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.as_used_by_wrapper {
+  border-bottom: 1px solid #dfe6f8;
+  display: flex;
+  align-items: center;
+  padding: 70px 4vw;
+}
+
+.img_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.as_used_by_text {
+  font-weight: 600;
+  font-size: 28px;
+  color: #0b1a2e60;
+  margin-right: 4vw;
+}
+
+/* Third Section: Numbers */
+.job_posted {
+  padding-top: 80px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+.number {
+  font-weight: 800;
+  font-size: 97px;
+  letter-spacing: -2.42px;
+  color: #0b1a2e;
+}
+
+.super {
+  font-weight: 800;
+  font-size: 76px;
+  letter-spacing: -1.9px;
+  color: #5a54f2;
+  vertical-align: super;
+  margin-left: 10px;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 23px;
+  letter-spacing: -0.57px;
+  color: #0b1a2e;
+  opacity: 0.33;
+  margin-top: 10px;
+}
+
+/* Fourth Section: Job List */
+.job_list {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.job_list::-webkit-scrollbar {
+  display: none;
+}
+
+.spacer {
+  padding: 25px;
+}
+
+.hover_controller {
+  height: 370px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hover_controller:hover > .one_card {
+  margin-bottom: 20px;
+}
+
+.one_card {
+  width: 368px;
+  height: 350px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.075);
+  margin-left: 50px;
+  padding: 50px;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+  cursor: pointer;
+  transition: margin 0.3s ease;
+}
+
+.one_card:active {
+  opacity: 0.8;
+}
+
+.poster_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.poster_photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  margin-right: 15px;
+}
+
+.poster_name {
+  letter-spacing: -0.4px;
+  color: #0b1a2e;
+  margin-right: 20px;
+}
+
+.post_time {
+  letter-spacing: -0.4px;
+  color: #0b1a2e;
+  opacity: 0.33;
+  font-size: 12px;
+}
+
+.post_title {
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: -0.65px;
+  color: #0b1a2e;
+  line-height: 130%;
+}
+
+.job_type_loc {
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  color: #0b1a2e;
+  opacity: 0.33;
+  margin-top: 15px;
+}
+
+.tag {
+  display: flex;
+  font-size: 14px;
+  letter-spacing: -0.35px;
+  color: #0b1a2e;
 }
