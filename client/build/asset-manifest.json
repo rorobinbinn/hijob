@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.15439e54.chunk.css",
-    "main.js": "/static/js/main.2aa10818.chunk.js",
-    "main.js.map": "/static/js/main.2aa10818.chunk.js.map",
+    "main.css": "/static/css/main.ee475d23.chunk.css",
+    "main.js": "/static/js/main.cb401ac6.chunk.js",
+    "main.js.map": "/static/js/main.cb401ac6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.84da46d4.js",
     "runtime-main.js.map": "/static/js/runtime-main.84da46d4.js.map",
-    "static/js/2.c6afb13e.chunk.js": "/static/js/2.c6afb13e.chunk.js",
-    "static/js/2.c6afb13e.chunk.js.map": "/static/js/2.c6afb13e.chunk.js.map",
+    "static/js/2.a5c1492c.chunk.js": "/static/js/2.a5c1492c.chunk.js",
+    "static/js/2.a5c1492c.chunk.js.map": "/static/js/2.a5c1492c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.efa8660e85ec5b608f4a5892e7f32ef8.js": "/precache-manifest.efa8660e85ec5b608f4a5892e7f32ef8.js",
+    "precache-manifest.00cf7ff062066d05a68f2034a2cd8070.js": "/precache-manifest.00cf7ff062066d05a68f2034a2cd8070.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.15439e54.chunk.css.map": "/static/css/main.15439e54.chunk.css.map",
-    "static/js/2.c6afb13e.chunk.js.LICENSE.txt": "/static/js/2.c6afb13e.chunk.js.LICENSE.txt",
-    "static/media/man-model.png": "/static/media/man-model.cbbe1a4c.png"
+    "static/css/main.ee475d23.chunk.css.map": "/static/css/main.ee475d23.chunk.css.map",
+    "static/js/2.a5c1492c.chunk.js.LICENSE.txt": "/static/js/2.a5c1492c.chunk.js.LICENSE.txt",
+    "static/media/man-model.png": "/static/media/man-model.cbbe1a4c.png",
+    "static/media/nadya_bella.jpg": "/static/media/nadya_bella.9279fa4d.jpg",
+    "static/media/natalia_polyska.jpg": "/static/media/natalia_polyska.20b883f4.jpg",
+    "static/media/nicky_amanda.jpg": "/static/media/nicky_amanda.1e1869d1.jpg",
+    "static/media/ptolemy_dunkley.jpg": "/static/media/ptolemy_dunkley.6c61b54e.jpg",
+    "static/media/rico_mayer.jpg": "/static/media/rico_mayer.dcf5eb6c.jpg",
+    "static/media/suzannah_baker.jpg": "/static/media/suzannah_baker.c4790594.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.84da46d4.js",
-    "static/js/2.c6afb13e.chunk.js",
-    "static/css/main.15439e54.chunk.css",
-    "static/js/main.2aa10818.chunk.js"
+    "static/js/2.a5c1492c.chunk.js",
+    "static/css/main.ee475d23.chunk.css",
+    "static/js/main.cb401ac6.chunk.js"
   ]
 }

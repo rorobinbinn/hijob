@@ -183,12 +183,11 @@ export default class Home extends Component {
         <div className='job_list'>
           {this.state.poster.length
             ? this.state.poster.map((item) => (
-                <div className='hover_controller'>
+                <div className='hover_controller' key={item.id}>
                   <div className='one_card'>
                     <div className='poster_info'>
                       <div className='left'>
                         <img
-                          key={item.id}
                           src={require('../assets/' + item.img)}
                           alt='Nadya Bella'
                           className='poster_photo'
