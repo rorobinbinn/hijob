@@ -82,7 +82,7 @@ export default class Home extends Component {
       <div className='Home'>
         <div className='hero_section'>
           <div className='hero_wrap'>
-            <div className='container-left'>
+            <div className='container-left fade-in-left'>
               <h1>Find a job that suits your passion</h1>
 
               <div className='search'>
@@ -122,8 +122,6 @@ export default class Home extends Component {
                 <div className='btn btn-primary'>Search</div>
               </div>
 
-              <div className='shadow'>&nbsp;</div>
-
               <div>
                 Designed by{' '}
                 <a
@@ -146,7 +144,7 @@ export default class Home extends Component {
               </div>
             </div>
 
-            <div className='container-right'>
+            <div className='container-right fade-in-right'>
               <img src={require('../assets/man-model.png')} alt='Man Model' />
             </div>
           </div>
