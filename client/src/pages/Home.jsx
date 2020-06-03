@@ -159,7 +159,7 @@ export default class Home extends Component {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  Steve Gunawan
+                  Kevin Al-Rizal
                 </a>{' '}
                 and Built by{' '}
                 <a

@@ -384,6 +384,8 @@
   -webkit-overflow-scrolling: touch;
   padding: 80px;
   padding-left: 40%;
+  box-sizing: border-box;
+  max-width: 100vw;
 }
 
 .feature_card_container::-webkit-scrollbar {
@@ -449,7 +451,8 @@
 
 .explore {
   padding: 200px 163px;
-  padding-right: 260px;
+  padding-right: 220px;
+  box-sizing: border-box;
   text-align: center;
 }
 
