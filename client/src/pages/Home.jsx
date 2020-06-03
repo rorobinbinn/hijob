@@ -79,7 +79,7 @@ export default class Home extends Component {
         {
           id: 'f1',
           url: 'icons8-diamond-64.png',
-          alt: 'Diamond Icon',
+          alt: 'Diamond',
           title: 'VIP Customer Support',
           description:
             'Quick response time and upgraded support solutions will help you to get what you need, when you need it.',
@@ -88,7 +88,7 @@ export default class Home extends Component {
         {
           id: 'f2',
           url: 'bill.png',
-          alt: 'Bill Icon',
+          alt: 'Bill',
           title: 'Improved Billing Options',
           description:
             'One team - one payment method. You can now add a card on file that every team member can use.',
@@ -97,7 +97,7 @@ export default class Home extends Component {
         {
           id: 'f3',
           url: 'icons8-lock-64.png',
-          alt: 'Lock Icon',
+          alt: 'Lock',
           title: 'Secure and Easy Process',
           description:
             'Every step taken by the company is well-prepared and has a complete security measurement.',
@@ -259,7 +259,7 @@ export default class Home extends Component {
           <div className='feature_left'>
             <img
               src={require('../assets/feature.png')}
-              alt='Feature Section Background Image'
+              alt='Feature Section Background'
             />
           </div>
 
