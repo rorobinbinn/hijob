@@ -8,7 +8,7 @@ export default class Home extends Component {
     this.state = {
       poster: [
         {
-          id: 1,
+          id: 'p1',
           img: 'nadya_bella.jpg',
           name: 'Nadya Bella',
           post_time: '2020-05-28T05:26:12.889Z',
@@ -19,7 +19,7 @@ export default class Home extends Component {
           tag_color: '#31cb9f',
         },
         {
-          id: 2,
+          id: 'p2',
           img: 'nicky_amanda.jpg',
           name: 'Nicky Amanda',
           post_time: '2020-05-21T05:26:12.889Z',
@@ -30,7 +30,7 @@ export default class Home extends Component {
           tag_color: '#f27a13',
         },
         {
-          id: 3,
+          id: 'p3',
           img: 'natalia_polyska.jpg',
           name: 'Natalia Polyska',
           post_time: '2020-05-01T05:26:12.889Z',
@@ -41,7 +41,7 @@ export default class Home extends Component {
           tag_color: '#0076ff',
         },
         {
-          id: 4,
+          id: 'p4',
           img: 'ptolemy_dunkley.jpg',
           name: 'Ptolemy Dunkley',
           post_time: '2020-04-01T05:26:12.889Z',
@@ -52,7 +52,7 @@ export default class Home extends Component {
           tag_color: '#25283d',
         },
         {
-          id: 5,
+          id: 'p5',
           img: 'rico_mayer.jpg',
           name: 'Rico Mayer',
           post_time: '2020-03-20T05:26:12.889Z',
@@ -63,7 +63,7 @@ export default class Home extends Component {
           tag_color: '#8f3985',
         },
         {
-          id: 6,
+          id: 'p6',
           img: 'suzannah_baker.jpg',
           name: 'Suzannah Baker',
           post_time: '2020-03-01T05:26:12.889Z',
@@ -72,6 +72,35 @@ export default class Home extends Component {
           job_type: 'Full Time',
           tag_name: 'Human Resources',
           tag_color: '#8f3985',
+        },
+      ],
+
+      feature: [
+        {
+          id: 'f1',
+          url: 'icons8-diamond-64.png',
+          alt: 'Diamond Icon',
+          title: 'VIP Customer Support',
+          description:
+            'Quick response time and upgraded support solutions will help you to get what you need, when you need it.',
+        },
+
+        {
+          id: 'f2',
+          url: 'bill.png',
+          alt: 'Bill Icon',
+          title: 'Improved Billing Options',
+          description:
+            'One team - one payment method. You can now add a card on file that every team member can use.',
+        },
+
+        {
+          id: 'f3',
+          url: 'icons8-lock-64.png',
+          alt: 'Lock Icon',
+          title: 'Secure and Easy Process',
+          description:
+            'Every step taken by the company is well-prepared and has a complete security measurement.',
         },
       ],
     };
@@ -224,6 +253,56 @@ export default class Home extends Component {
               ))
             : null}
           <div className='spacer'></div>
+        </div>
+
+        <div className='feature_list'>
+          <div className='feature_left'>
+            <img
+              src={require('../assets/feature.png')}
+              alt='Feature Section Background Image'
+            />
+          </div>
+
+          <div className='feature_right'>
+            <div className='feature_title'>Get a Job More Fast</div>
+
+            <div className='feature_subtitle'>
+              This is a chance for you to earn big income.
+            </div>
+
+            <div className='feature_card_container'>
+              {this.state.feature.length
+                ? this.state.feature.map((item) => (
+                    <div className='feature_hover' key={item.id}>
+                      <div className='feature_card'>
+                        <div className='icon'>
+                          <img
+                            src={require('../assets/' + item.url)}
+                            alt={item.alt}
+                          />
+                        </div>
+
+                        <div className='card_title'>{item.title}</div>
+                        <div className='card_description'>
+                          {item.description}
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                : null}
+
+              <div className='spacer'></div>
+            </div>
+          </div>
+        </div>
+
+        <div className='explore'>
+          <div className='explore_title'>Explore The Job</div>
+          <div className='explore_subtitle'>Choose your favourite job</div>
+
+          <div className='job_category_board'>
+            <div className='job_category'></div>
+          </div>
         </div>
       </div>
     );
