@@ -10,7 +10,7 @@ export default class Home extends Component {
       poster: [
         {
           id: 'p1',
-          img: 'nadya_bella.jpg',
+          img: 'nadya_bella.webp',
           name: 'Nadya Bella',
           post_time: '2020-05-28T05:26:12.889Z',
           post_title: 'UI/UX Designer Mentor',
@@ -21,7 +21,7 @@ export default class Home extends Component {
         },
         {
           id: 'p2',
-          img: 'nicky_amanda.jpg',
+          img: 'nicky_amanda.webp',
           name: 'Nicky Amanda',
           post_time: '2020-05-21T05:26:12.889Z',
           post_title: 'Front End Website Designer',
@@ -32,7 +32,7 @@ export default class Home extends Component {
         },
         {
           id: 'p3',
-          img: 'natalia_polyska.jpg',
+          img: 'natalia_polyska.webp',
           name: 'Natalia Polyska',
           post_time: '2020-05-01T05:26:12.889Z',
           post_title: 'Senior Graphic Designer',
@@ -43,7 +43,7 @@ export default class Home extends Component {
         },
         {
           id: 'p4',
-          img: 'ptolemy_dunkley.jpg',
+          img: 'ptolemy_dunkley.webp',
           name: 'Ptolemy Dunkley',
           post_time: '2020-04-01T05:26:12.889Z',
           post_title: 'Mobile - App Senior Programmer',
@@ -54,7 +54,7 @@ export default class Home extends Component {
         },
         {
           id: 'p5',
-          img: 'rico_mayer.jpg',
+          img: 'rico_mayer.webp',
           name: 'Rico Mayer',
           post_time: '2020-03-20T05:26:12.889Z',
           post_title: 'Finance & Accounting Staff',
@@ -65,7 +65,7 @@ export default class Home extends Component {
         },
         {
           id: 'p6',
-          img: 'suzannah_baker.jpg',
+          img: 'suzannah_baker.webp',
           name: 'Suzannah Baker',
           post_time: '2020-03-01T05:26:12.889Z',
           post_title: 'HR Operations Manager',
@@ -88,7 +88,7 @@ export default class Home extends Component {
 
         {
           id: 'f2',
-          url: 'icons8-bill-100.png',
+          url: 'icons8-bill-100.webp',
           alt: 'Bill',
           title: 'Improved Billing Options',
           description:
@@ -291,7 +291,7 @@ export default class Home extends Component {
             </div>
 
             <div className='container-right fade-in-right'>
-              <img src={require('../assets/man-model.png')} alt='Man Model' />
+              <img src={require('../assets/man-model.webp')} alt='Man Model' />
             </div>
           </div>
         </div>
@@ -302,14 +302,14 @@ export default class Home extends Component {
 
             <div className='img_row'>
               <img
-                src={require('../assets/microsoft.png')}
+                src={require('../assets/microsoft.webp')}
                 alt='Microsoft Logo'
               />
 
-              <img src={require('../assets/intel.png')} alt='Intel Logo' />
-              <img src={require('../assets/google.png')} alt='Google Logo' />
+              <img src={require('../assets/intel.webp')} alt='Intel Logo' />
+              <img src={require('../assets/google.webp')} alt='Google Logo' />
               <img
-                src={require('../assets/facebook.png')}
+                src={require('../assets/facebook.webp')}
                 alt='Facebook Logo'
               />
             </div>
@@ -375,7 +375,7 @@ export default class Home extends Component {
         <div className='feature_list'>
           <div className='feature_left'>
             <img
-              src={require('../assets/feature.png')}
+              src={require('../assets/feature.webp')}
               alt='Feature Section Background'
             />
           </div>
