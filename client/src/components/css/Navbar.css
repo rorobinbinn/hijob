@@ -27,14 +27,15 @@
   font-size: 20px;
   margin-left: 40px;
   user-select: none;
-  transition: font-size 0.3s ease;
+  transition: all 0.3s ease-out;
   font-weight: 600;
   padding-bottom: 5px;
   padding-top: 5px;
 }
 
 .nav_link:hover {
-  border-bottom: dashed 2px black;
+  color: #5a54f2;
+  transition: all 0.3s ease-out;
 }
 
 .nav_link:active {

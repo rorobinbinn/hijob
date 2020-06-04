@@ -697,10 +697,12 @@
   cursor: pointer;
   padding: 10px;
   user-select: none;
+  transition: color 0.3s ease-out;
 }
 
 .right_foot .item:hover {
-  border-bottom: dashed 2px;
+  /* border-bottom: dashed 2px; */
+  color: #5a54f2;
 }
 
 .right_foot .item:active {

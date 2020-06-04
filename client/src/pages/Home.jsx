@@ -6,11 +6,14 @@ import Kota from './Kota.json';
 export default class Home extends Component {
   constructor(props) {
     super(props);
+    const isChrome =
+      /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
     this.state = {
       poster: [
         {
           id: 'p1',
-          img: 'nadya_bella.webp',
+          img: `nadya_bella.${isChrome ? 'webp' : 'jpg'}`,
           name: 'Nadya Bella',
           post_time: '2020-05-28T05:26:12.889Z',
           post_title: 'UI/UX Designer Mentor',
@@ -21,7 +24,7 @@ export default class Home extends Component {
         },
         {
           id: 'p2',
-          img: 'nicky_amanda.webp',
+          img: `nicky_amanda.${isChrome ? 'webp' : 'jpg'}`,
           name: 'Nicky Amanda',
           post_time: '2020-05-21T05:26:12.889Z',
           post_title: 'Front End Website Designer',
@@ -32,7 +35,7 @@ export default class Home extends Component {
         },
         {
           id: 'p3',
-          img: 'natalia_polyska.webp',
+          img: `natalia_polyska.${isChrome ? 'webp' : 'jpg'}`,
           name: 'Natalia Polyska',
           post_time: '2020-05-01T05:26:12.889Z',
           post_title: 'Senior Graphic Designer',
@@ -43,7 +46,7 @@ export default class Home extends Component {
         },
         {
           id: 'p4',
-          img: 'ptolemy_dunkley.webp',
+          img: `ptolemy_dunkley.${isChrome ? 'webp' : 'jpg'}`,
           name: 'Ptolemy Dunkley',
           post_time: '2020-04-01T05:26:12.889Z',
           post_title: 'Mobile - App Senior Programmer',
@@ -54,7 +57,7 @@ export default class Home extends Component {
         },
         {
           id: 'p5',
-          img: 'rico_mayer.webp',
+          img: `rico_mayer.${isChrome ? 'webp' : 'jpg'}`,
           name: 'Rico Mayer',
           post_time: '2020-03-20T05:26:12.889Z',
           post_title: 'Finance & Accounting Staff',
@@ -65,7 +68,7 @@ export default class Home extends Component {
         },
         {
           id: 'p6',
-          img: 'suzannah_baker.webp',
+          img: `suzannah_baker.${isChrome ? 'webp' : 'jpg'}`,
           name: 'Suzannah Baker',
           post_time: '2020-03-01T05:26:12.889Z',
           post_title: 'HR Operations Manager',
@@ -88,7 +91,7 @@ export default class Home extends Component {
 
         {
           id: 'f2',
-          url: 'icons8-bill-100.webp',
+          url: `icons8-bill-100.${isChrome ? 'webp' : 'png'}`,
           alt: 'Bill',
           title: 'Improved Billing Options',
           description:
@@ -293,7 +296,12 @@ export default class Home extends Component {
             </div>
 
             <div className='container-right fade-in-right'>
-              <img src={require('../assets/man-model.webp')} alt='Man Model' />
+              <img
+                src={require(`../assets/man-model.${
+                  this.isChrome ? 'webp' : 'png'
+                }`)}
+                alt='Man Model'
+              />
             </div>
           </div>
         </div>
@@ -304,14 +312,30 @@ export default class Home extends Component {
 
             <div className='img_row'>
               <img
-                src={require('../assets/microsoft.webp')}
+                src={require(`../assets/microsoft.${
+                  this.isChrome ? 'webp' : 'png'
+                }`)}
                 alt='Microsoft Logo'
               />
 
-              <img src={require('../assets/intel.webp')} alt='Intel Logo' />
-              <img src={require('../assets/google.webp')} alt='Google Logo' />
               <img
-                src={require('../assets/facebook.webp')}
+                src={require(`../assets/intel.${
+                  this.isChrome ? 'webp' : 'png'
+                }`)}
+                alt='Intel Logo'
+              />
+
+              <img
+                src={require(`../assets/google.${
+                  this.isChrome ? 'webp' : 'png'
+                }`)}
+                alt='Google Logo'
+              />
+
+              <img
+                src={require(`../assets/facebook.${
+                  this.isChrome ? 'webp' : 'png'
+                }`)}
                 alt='Facebook Logo'
               />
             </div>
@@ -377,7 +401,9 @@ export default class Home extends Component {
         <div className='feature_list'>
           <div className='feature_left'>
             <img
-              src={require('../assets/feature.webp')}
+              src={require(`../assets/feature.${
+                this.isChrome ? 'webp' : 'png'
+              }`)}
               alt='Feature Section Background'
             />
           </div>
