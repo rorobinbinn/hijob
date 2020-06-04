@@ -126,6 +126,8 @@ export default class Home extends Component {
     this.listen_drag_feature();
     this.listen_drag_job();
     this.restructure_kota();
+    this.handle_text_change({ target: { name: '', value: '' } });
+    this.setState({ show_dropdown: false });
   };
 
   listen_drag_feature() {
@@ -520,7 +522,7 @@ export default class Home extends Component {
                   src={require('../assets/triangle.svg')}
                   alt='Triangle'
                   className='search_icon triangle'
-                  onClick={() => {
+                  onClick={(e) => {
                     this.setState({ show_dropdown: !this.state.show_dropdown });
                   }}
                 />
