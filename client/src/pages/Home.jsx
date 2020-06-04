@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/Home.css';
 import moment from 'moment';
+import Kota from './Kota.json';
 
 export default class Home extends Component {
   constructor(props) {
@@ -78,7 +79,7 @@ export default class Home extends Component {
       feature: [
         {
           id: 'f1',
-          url: 'icons8-diamond-64.png',
+          url: 'diamond.svg',
           alt: 'Diamond',
           title: 'VIP Customer Support',
           description:
@@ -87,7 +88,7 @@ export default class Home extends Component {
 
         {
           id: 'f2',
-          url: 'bill.png',
+          url: 'icons8-bill-100.png',
           alt: 'Bill',
           title: 'Improved Billing Options',
           description:
@@ -96,19 +97,135 @@ export default class Home extends Component {
 
         {
           id: 'f3',
-          url: 'icons8-lock-64.png',
+          url: 'icons8-lock.svg',
           alt: 'Lock',
           title: 'Secure and Easy Process',
           description:
             'Every step taken by the company is well-prepared and has a complete security measurement.',
         },
       ],
+
+      job_category: [
+        { id: 'j1', url: 'design.svg', title: 'UI/UX Design' },
+        { id: 'j2', url: 'mobile.svg', title: 'Mobile Development' },
+        { id: 'j3', url: 'web.svg', title: 'Web Development' },
+        { id: 'j4', url: 'support.svg', title: 'Customer Support' },
+        { id: 'j5', url: 'business.svg', title: 'Business & Marketing' },
+        { id: 'j6', url: 'finance.svg', title: 'Finance & Accounting' },
+        { id: 'j7', url: 'human.svg', title: 'Human Resources' },
+      ],
+
+      kota: [],
+      kota_display: [],
+      show_dropdown: false,
+      city_value: '',
     };
+  }
+
+  componentDidMount = () => {
+    this.listen_drag_feature();
+    this.listen_drag_job();
+    this.restructure_kota();
+  };
+
+  listen_drag_feature() {
+    const feature_card_container = document.getElementsByClassName(
+      'feature_card_container'
+    )[0];
+
+    let dragging_feature = false,
+      screenX = 0;
+
+    feature_card_container.addEventListener('mousedown', (e) => {
+      dragging_feature = true;
+      screenX = e.screenX;
+      feature_card_container.style = 'cursor: grabbing';
+    });
+
+    feature_card_container.addEventListener('mousemove', (e) => {
+      if (dragging_feature) {
+        feature_card_container.scrollLeft += (screenX - e.screenX) / 10;
+      }
+    });
+
+    feature_card_container.addEventListener('mouseup', (e) => {
+      dragging_feature = false;
+      feature_card_container.style = '';
+    });
+  }
+
+  listen_drag_job() {
+    const feature_card_container = document.getElementsByClassName(
+      'job_list'
+    )[0];
+
+    let dragging_feature = false,
+      screenX = 0;
+
+    feature_card_container.addEventListener('mousedown', (e) => {
+      dragging_feature = true;
+      screenX = e.screenX;
+    });
+
+    feature_card_container.addEventListener('mousemove', (e) => {
+      if (dragging_feature) {
+        feature_card_container.scrollLeft += (screenX - e.screenX) / 10;
+      }
+    });
+
+    feature_card_container.addEventListener('mouseup', (e) => {
+      dragging_feature = false;
+    });
+  }
+
+  restructure_kota() {
+    let { kota } = this.state;
+
+    for (let key1 in Kota) {
+      for (let key2 in Kota[key1]) {
+        for (let key3 in Kota[key1][key2]) {
+          if (
+            Kota[key1][key2][key3] instanceof Object &&
+            !(Kota[key1][key2][key3] instanceof Array)
+          ) {
+            for (let key4 in Kota[key1][key2][key3]) {
+              Kota[key1][key2][key3][key4].forEach((city) => {
+                kota.push(city);
+              });
+            }
+          } else {
+            kota.push(Kota[key1][key2][key3]);
+          }
+        }
+      }
+    }
+
+    this.setState({ kota });
+  }
+
+  handle_text_change(e) {
+    this.filter_kota(e.target.value);
+    this.setState({ [e.target.name]: e.target.value, show_dropdown: true });
+  }
+
+  filter_kota(str) {
+    if (!str) return this.setState({ kota_display: this.state.kota });
+
+    const kota_display = this.state.kota.filter((kota) => {
+      return kota.toString().toLowerCase().includes(str.toLowerCase());
+    });
+
+    this.setState({ kota_display });
   }
 
   render() {
     return (
-      <div className='Home'>
+      <div
+        className='Home'
+        onClick={() => {
+          this.setState({ show_dropdown: false });
+        }}
+      >
         <div className='hero_section'>
           <div className='hero_wrap'>
             <div className='container-left fade-in-left'>
@@ -301,7 +418,152 @@ export default class Home extends Component {
           <div className='explore_subtitle'>Choose your favourite job</div>
 
           <div className='job_category_board'>
-            <div className='job_category'></div>
+            {this.state.job_category.length
+              ? this.state.job_category.map((item) => (
+                  <div className='job_category_hover' key={item.id}>
+                    <div className='job_category'>
+                      <div className='icon_container'>
+                        <img
+                          src={require('../assets/' + item.url)}
+                          alt={item.title}
+                        />
+                      </div>
+
+                      <div className='category_title'>{item.title}</div>
+                    </div>
+                  </div>
+                ))
+              : null}
+
+            <div className='job_category_hover'>
+              <div className='job_category'>
+                <div className='icon_container'>
+                  <img src={require('../assets/plus.svg')} alt='Explore More' />
+                </div>
+
+                <div className='category_title'>Explore More</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='find_yours'>
+          <div className='find_yours_title'>
+            Find your freelance job,
+            <br />
+            Convert your ideas into reality.
+          </div>
+
+          <div className='second_search'>
+            <div className='search_keyword'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 512 512'
+                className='search_icon'
+              >
+                <title>ionicons-v5-f</title>
+
+                <path
+                  d='M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z'
+                  style={{
+                    fill: 'none',
+                    stroke: '#d0d1d5',
+                    strokeMiterlimit: 10,
+                    strokeWidth: '48px',
+                  }}
+                />
+
+                <line
+                  x1='338.29'
+                  y1='338.29'
+                  x2='448'
+                  y2='448'
+                  style={{
+                    fill: 'none',
+                    stroke: '#d0d1d5',
+                    strokeLinecap: 'round',
+                    strokeMiterlimit: 10,
+                    strokeWidth: '48px',
+                  }}
+                />
+              </svg>
+
+              <input type='text' placeholder='Keyword' />
+            </div>
+
+            <div
+              className='search_location'
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <div className='location_input'>
+                <img
+                  src={require('../assets/location.svg')}
+                  alt='Location Pin'
+                  className='search_icon'
+                />
+
+                <input
+                  type='text'
+                  placeholder={
+                    this.state.kota[
+                      Math.round(Math.random() * this.state.kota.length)
+                    ]
+                  }
+                  onChange={this.handle_text_change.bind(this)}
+                  name='city_value'
+                  value={this.state.city_value}
+                />
+
+                <img
+                  src={require('../assets/triangle.svg')}
+                  alt='Triangle'
+                  className='search_icon triangle'
+                  onClick={() => {
+                    this.setState({ show_dropdown: !this.state.show_dropdown });
+                  }}
+                />
+              </div>
+
+              <div
+                className='dropdown'
+                style={this.state.show_dropdown ? {} : { display: 'none' }}
+              >
+                {this.state.kota_display.length
+                  ? this.state.kota_display.map((item) => (
+                      <div
+                        className='dropdown_item'
+                        key={item}
+                        onClick={() => {
+                          this.setState({
+                            show_dropdown: false,
+                            city_value: item,
+                          });
+                        }}
+                      >
+                        {item}
+                      </div>
+                    ))
+                  : null}
+              </div>
+            </div>
+
+            <div className='btn btn-primary'>Search</div>
+          </div>
+        </div>
+
+        <div className='footer'>
+          <div className='left_foot'>
+            <div className='brand'>hijob!</div>
+            <div className='copyright'>© hijob! International Ltd. 2020</div>
+          </div>
+
+          <div className='right_foot'>
+            <div className='item'>About</div>
+            <div className='item'>Privacy & Legal</div>
+            <div className='item'>Partners</div>
+            <div className='item'>Contact</div>
           </div>
         </div>
       </div>
