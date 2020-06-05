@@ -75,7 +75,7 @@ export default class Home extends Component {
           job_location: 'Jakarta',
           job_type: 'Full Time',
           tag_name: 'Human Resources',
-          tag_color: '#8f3985',
+          tag_color: '#dff2d8',
         },
       ],
 
