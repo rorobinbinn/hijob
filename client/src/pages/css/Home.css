@@ -2,6 +2,8 @@
 .hero_section {
   min-height: 100vh;
   background-color: #dbeffd;
+  display: flex;
+  align-items: flex-end;
 }
 
 .hero_section h1 {
@@ -16,18 +18,23 @@
 
 .hero_wrap {
   display: flex;
-  padding-top: 100px;
-  padding-left: 10vw;
-  margin: auto;
+  margin: 0 auto;
+  width: 80vw;
+  overflow: hidden;
 }
 
 .container-left {
-  width: 50%;
-  padding-top: 150px;
+  width: 56.25%;
+  padding-top: 153px;
 }
 
 .container-right {
-  width: 50%;
+  width: 43.25%;
+}
+
+.container-right img {
+  position: relative;
+  top: 3px;
 }
 
 .search {
