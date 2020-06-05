@@ -1,9 +1,11 @@
 /* First Section: Hero */
 .hero_section {
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 900px;
   background-color: #dbeffd;
   display: flex;
   align-items: flex-end;
+  overflow: hidden;
 }
 
 .hero_section h1 {
@@ -20,7 +22,6 @@
   display: flex;
   margin: 0 auto;
   width: 80vw;
-  overflow: hidden;
 }
 
 .container-left {
