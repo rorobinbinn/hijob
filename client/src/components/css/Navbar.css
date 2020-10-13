@@ -55,3 +55,65 @@
   border-radius: 10px;
   transition: font-size 0.3s ease, opacity 0.3s ease-out;
 }
+
+@media all and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .nav-mobile {
+    background-color: white;
+    position: fixed;
+    padding: 3vh 10vw;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-mobile ion-icon {
+    font-size: 32px;
+    color: var(--primary);
+  }
+
+  .dropdown-container {
+    position: absolute;
+    background-color: var(--light);
+    right: 0;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      0 100px 80px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .dropdown-item {
+    padding: 15px 25px;
+  }
+
+  .dropdown-item:hover {
+    background-color: #5a53f21a;
+  }
+
+  .menu-container {
+    position: relative;
+  }
+
+  .trans {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    height: 100vh;
+    visibility: hidden;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .nav-mobile {
+    display: none;
+  }
+}
