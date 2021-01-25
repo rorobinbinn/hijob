@@ -3,17 +3,18 @@ import './css/Home.css';
 import moment from 'moment';
 import Kota from './Kota.json';
 import Hero from './Hero/Hero';
-import { isChrome } from './Helper';
+import { checkIfChrome } from './Helper';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
+    this.isChrome = checkIfChrome;
 
     this.state = {
       poster: [
         {
           id: 'p1',
-          img: `nadya_bella.${isChrome ? 'webp' : 'jpg'}`,
+          img: `nadya_bella.${this.isChrome ? 'webp' : 'jpg'}`,
           name: 'Nadya Bella',
           post_time: '2020-05-28T05:26:12.889Z',
           post_title: 'UI/UX Designer Mentor',
@@ -24,7 +25,7 @@ export default class Home extends Component {
         },
         {
           id: 'p2',
-          img: `nicky_amanda.${isChrome ? 'webp' : 'jpg'}`,
+          img: `nicky_amanda.${this.isChrome ? 'webp' : 'jpg'}`,
           name: 'Nicky Amanda',
           post_time: '2020-05-21T05:26:12.889Z',
           post_title: 'Front End Website Designer',
@@ -35,7 +36,7 @@ export default class Home extends Component {
         },
         {
           id: 'p3',
-          img: `natalia_polyska.${isChrome ? 'webp' : 'jpg'}`,
+          img: `natalia_polyska.${this.isChrome ? 'webp' : 'jpg'}`,
           name: 'Natalia Polyska',
           post_time: '2020-05-01T05:26:12.889Z',
           post_title: 'Senior Graphic Designer',
@@ -46,7 +47,7 @@ export default class Home extends Component {
         },
         {
           id: 'p4',
-          img: `ptolemy_dunkley.${isChrome ? 'webp' : 'jpg'}`,
+          img: `ptolemy_dunkley.${this.isChrome ? 'webp' : 'jpg'}`,
           name: 'Ptolemy Dunkley',
           post_time: '2020-04-01T05:26:12.889Z',
           post_title: 'Mobile - App Senior Programmer',
@@ -57,7 +58,7 @@ export default class Home extends Component {
         },
         {
           id: 'p5',
-          img: `rico_mayer.${isChrome ? 'webp' : 'jpg'}`,
+          img: `rico_mayer.${this.isChrome ? 'webp' : 'jpg'}`,
           name: 'Rico Mayer',
           post_time: '2020-03-20T05:26:12.889Z',
           post_title: 'Finance & Accounting Staff',
@@ -68,7 +69,7 @@ export default class Home extends Component {
         },
         {
           id: 'p6',
-          img: `suzannah_baker.${isChrome ? 'webp' : 'jpg'}`,
+          img: `suzannah_baker.${this.isChrome ? 'webp' : 'jpg'}`,
           name: 'Suzannah Baker',
           post_time: '2020-03-01T05:26:12.889Z',
           post_title: 'HR Operations Manager',
@@ -91,7 +92,7 @@ export default class Home extends Component {
 
         {
           id: 'f2',
-          url: `icons8-bill-100.${isChrome ? 'webp' : 'png'}`,
+          url: `icons8-bill-100.${this.isChrome ? 'webp' : 'png'}`,
           alt: 'Bill',
           title: 'Improved Billing Options',
           description: 'One team - one payment method. You can now add a card on file that every team member can use.',
@@ -229,10 +230,13 @@ export default class Home extends Component {
             <div className='as_used_by_text'>As used by</div>
 
             <div className='img_row'>
-              <img src={require(`../assets/microsoft.${isChrome ? 'webp' : 'png'}`).default} alt='Microsoft Logo' />
-              <img src={require(`../assets/intel.${isChrome ? 'webp' : 'png'}`).default} alt='Intel Logo' />
-              <img src={require(`../assets/google.${isChrome ? 'webp' : 'png'}`).default} alt='Google Logo' />
-              <img src={require(`../assets/facebook.${isChrome ? 'webp' : 'png'}`).default} alt='Facebook Logo' />
+              <img
+                src={require(`../assets/microsoft.${this.isChrome ? 'webp' : 'png'}`).default}
+                alt='Microsoft Logo'
+              />
+              <img src={require(`../assets/intel.${this.isChrome ? 'webp' : 'png'}`).default} alt='Intel Logo' />
+              <img src={require(`../assets/google.${this.isChrome ? 'webp' : 'png'}`).default} alt='Google Logo' />
+              <img src={require(`../assets/facebook.${this.isChrome ? 'webp' : 'png'}`).default} alt='Facebook Logo' />
             </div>
           </div>
         </div>
@@ -294,14 +298,13 @@ export default class Home extends Component {
         <div className='feature_list'>
           <div className='feature_left'>
             <img
-              src={require(`../assets/feature.${isChrome ? 'webp' : 'png'}`).default}
+              src={require(`../assets/feature.${this.isChrome ? 'webp' : 'png'}`).default}
               alt='Feature Section Background'
             />
           </div>
 
           <div className='feature_right'>
             <div className='feature_title'>Get a Job More Fast</div>
-
             <div className='feature_subtitle'>This is a chance for you to earn big income.</div>
 
             <div className='feature_card_container'>

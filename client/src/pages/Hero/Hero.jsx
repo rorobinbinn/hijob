@@ -1,8 +1,10 @@
 import React from 'react';
-import { isChrome } from '../Helper';
+import { checkIfChrome } from '../Helper';
 import './Hero.css';
 
 const Hero = () => {
+  const isChrome = checkIfChrome;
+
   return (
     <div className='hero_section'>
       <div className='hero_wrap'>
