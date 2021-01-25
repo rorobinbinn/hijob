@@ -64,6 +64,7 @@
   .nav-mobile {
     background-color: white;
     position: fixed;
+    z-index: 10;
     padding: 3vh 10vw;
     width: 100vw;
     display: flex;
