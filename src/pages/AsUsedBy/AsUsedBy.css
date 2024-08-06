@@ -1,0 +1,25 @@
+.as_used_by {
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.as_used_by_wrapper {
+  border-bottom: 1px solid #dfe6f8;
+  display: flex;
+  align-items: center;
+  padding: 70px 4vw;
+}
+
+.img_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.as_used_by_text {
+  font-weight: 600;
+  font-size: 28px;
+  color: #0b1a2e60;
+  margin-right: 4vw;
+}

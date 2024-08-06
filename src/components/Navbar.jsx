@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './css/Navbar.css';
-import { Link, withRouter } from 'react-router-dom';
 
 class Navbar extends Component {
   constructor(props) {
@@ -133,4 +133,4 @@ class Navbar extends Component {
   }
 }
 
-export default withRouter(Navbar);
+export default Navbar;

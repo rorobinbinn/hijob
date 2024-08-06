@@ -12,7 +12,11 @@ const Hero = () => {
           <h1>Find a job that suits your passion</h1>
 
           <div className='search'>
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' className='search_icon'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 512 512'
+              className='search_icon'
+            >
               <title>ionicons-v5-f</title>
 
               <path
@@ -46,12 +50,17 @@ const Hero = () => {
 
           <div className='author-section'>
             Designed by{' '}
-            <a href='https://dribbble.com/uiwithvin' className='author_name' target='_blank' rel='noopener noreferrer'>
+            <a
+              href='https://dribbble.com/uiwithvin'
+              className='author_name'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               Kevin Al-Rizal
             </a>{' '}
             and Built by{' '}
             <a
-              href='https://linkedin.com/in/robinson-ody'
+              href='https://robinson-ody.com'
               className='author_name'
               target='_blank'
               rel='noopener noreferrer'
@@ -62,7 +71,10 @@ const Hero = () => {
         </div>
 
         <div className='container-right fade-in-right'>
-          <img src={require(`../../assets/man-model.${isChrome ? 'webp' : 'png'}`).default} alt='Man Model' />
+          <img
+            src={require(`../../assets/man-model.${isChrome ? 'webp' : 'png'}`)}
+            alt='Man Model'
+          />
         </div>
       </div>
     </div>

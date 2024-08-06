@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './css/Home.css';
-import moment from 'moment';
+import './Home.css';
 import Kota from './Kota.json';
 import Hero from './Hero/Hero';
 import { checkIfChrome } from './Helper';
+import { DateTime } from 'luxon';
+import AsUsedBy from './AsUsedBy/AsUsedBy';
 
 export default class Home extends Component {
   constructor(props) {
@@ -95,7 +96,8 @@ export default class Home extends Component {
           url: `icons8-bill-100.${this.isChrome ? 'webp' : 'png'}`,
           alt: 'Bill',
           title: 'Improved Billing Options',
-          description: 'One team - one payment method. You can now add a card on file that every team member can use.',
+          description:
+            'One team - one payment method. You can now add a card on file that every team member can use.',
         },
 
         {
@@ -103,7 +105,8 @@ export default class Home extends Component {
           url: 'icons8-lock.svg',
           alt: 'Lock',
           title: 'Secure and Easy Process',
-          description: 'Every step taken by the company is well-prepared and has a complete security measurement.',
+          description:
+            'Every step taken by the company is well-prepared and has a complete security measurement.',
         },
       ],
 
@@ -133,7 +136,9 @@ export default class Home extends Component {
   };
 
   listen_drag_feature() {
-    const feature_card_container = document.getElementsByClassName('feature_card_container')[0];
+    const feature_card_container = document.getElementsByClassName(
+      'feature_card_container'
+    )[0];
 
     let dragging_feature = false,
       screenX = 0;
@@ -157,7 +162,8 @@ export default class Home extends Component {
   }
 
   listen_drag_job() {
-    const feature_card_container = document.getElementsByClassName('job_list')[0];
+    const feature_card_container =
+      document.getElementsByClassName('job_list')[0];
 
     let dragging_feature = false,
       screenX = 0;
@@ -184,7 +190,10 @@ export default class Home extends Component {
     for (let key1 in Kota) {
       for (let key2 in Kota[key1]) {
         for (let key3 in Kota[key1][key2]) {
-          if (Kota[key1][key2][key3] instanceof Object && !(Kota[key1][key2][key3] instanceof Array)) {
+          if (
+            Kota[key1][key2][key3] instanceof Object &&
+            !(Kota[key1][key2][key3] instanceof Array)
+          ) {
             for (let key4 in Kota[key1][key2][key3]) {
               Kota[key1][key2][key3][key4].forEach(city => {
                 kota.push(city);
@@ -224,23 +233,8 @@ export default class Home extends Component {
         }}
       >
         <Hero />
-
-        <div className='as_used_by'>
-          <div className='as_used_by_wrapper'>
-            <div className='as_used_by_text'>As used by</div>
-
-            <div className='img_row'>
-              <img
-                src={require(`../assets/microsoft.${this.isChrome ? 'webp' : 'png'}`).default}
-                alt='Microsoft Logo'
-              />
-              <img src={require(`../assets/intel.${this.isChrome ? 'webp' : 'png'}`).default} alt='Intel Logo' />
-              <img src={require(`../assets/google.${this.isChrome ? 'webp' : 'png'}`).default} alt='Google Logo' />
-              <img src={require(`../assets/facebook.${this.isChrome ? 'webp' : 'png'}`).default} alt='Facebook Logo' />
-            </div>
-          </div>
-        </div>
-
+        <AsUsedBy />
+        
         <div className='job_posted'>
           <div className='number'>
             500.000<span className='super'>+</span>
@@ -257,7 +251,7 @@ export default class Home extends Component {
                     <div className='poster_info'>
                       <div className='left'>
                         <img
-                          src={require('../assets/' + item.img).default}
+                          src={require('../assets/' + item.img)}
                           alt='Nadya Bella'
                           className='poster_photo'
                         />
@@ -265,7 +259,9 @@ export default class Home extends Component {
                         <div className='poster_name'>{item.name}</div>
                       </div>
 
-                      <div className='post_time'>{moment(item.post_time).fromNow()}</div>
+                      <div className='post_time'>
+                        {DateTime.fromISO(item.post_time).toRelative()}
+                      </div>
                     </div>
 
                     <div>
@@ -298,14 +294,18 @@ export default class Home extends Component {
         <div className='feature_list'>
           <div className='feature_left'>
             <img
-              src={require(`../assets/feature.${this.isChrome ? 'webp' : 'png'}`).default}
+              src={require(`../assets/feature.${
+                this.isChrome ? 'webp' : 'png'
+              }`)}
               alt='Feature Section Background'
             />
           </div>
 
           <div className='feature_right'>
             <div className='feature_title'>Get a Job More Fast</div>
-            <div className='feature_subtitle'>This is a chance for you to earn big income.</div>
+            <div className='feature_subtitle'>
+              This is a chance for you to earn big income.
+            </div>
 
             <div className='feature_card_container'>
               {this.state.feature.length
@@ -313,11 +313,16 @@ export default class Home extends Component {
                     <div className='feature_hover' key={item.id}>
                       <div className='feature_card'>
                         <div className='icon'>
-                          <img src={require('../assets/' + item.url).default} alt={item.alt} />
+                          <img
+                            src={require('../assets/' + item.url)}
+                            alt={item.alt}
+                          />
                         </div>
 
                         <div className='card_title'>{item.title}</div>
-                        <div className='card_description'>{item.description}</div>
+                        <div className='card_description'>
+                          {item.description}
+                        </div>
                       </div>
                     </div>
                   ))
@@ -338,7 +343,10 @@ export default class Home extends Component {
                   <div className='job_category_hover' key={item.id}>
                     <div className='job_category'>
                       <div className='icon_container'>
-                        <img src={require('../assets/' + item.url).default} alt={item.title} />
+                        <img
+                          src={require('../assets/' + item.url)}
+                          alt={item.title}
+                        />
                       </div>
 
                       <div className='category_title'>{item.title}</div>
@@ -350,7 +358,10 @@ export default class Home extends Component {
             <div className='job_category_hover'>
               <div className='job_category'>
                 <div className='icon_container'>
-                  <img src={require('../assets/plus.svg').default} alt='Explore More' />
+                  <img
+                    src={require('../assets/plus.svg').default}
+                    alt='Explore More'
+                  />
                 </div>
 
                 <div className='category_title'>Explore More</div>
@@ -368,7 +379,11 @@ export default class Home extends Component {
 
           <div className='second_search'>
             <div className='search_keyword'>
-              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' className='search_icon'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 512 512'
+                className='search_icon'
+              >
                 <title>ionicons-v5-f</title>
 
                 <path
@@ -401,11 +416,19 @@ export default class Home extends Component {
 
             <div className='search_location' onClick={e => e.stopPropagation()}>
               <div className='location_input'>
-                <img src={require('../assets/location.svg').default} alt='Location Pin' className='search_icon' />
+                <img
+                  src={require('../assets/location.svg').default}
+                  alt='Location Pin'
+                  className='search_icon'
+                />
 
                 <input
                   type='text'
-                  placeholder={this.state.kota[Math.round(Math.random() * this.state.kota.length)]}
+                  placeholder={
+                    this.state.kota[
+                      Math.round(Math.random() * this.state.kota.length)
+                    ]
+                  }
                   onChange={this.handle_text_change.bind(this)}
                   name='city_value'
                   value={this.state.city_value}
@@ -421,13 +444,21 @@ export default class Home extends Component {
                 />
               </div>
 
-              <div className='dropdown' style={this.state.show_dropdown ? {} : { display: 'none' }}>
+              <div
+                className='dropdown'
+                style={this.state.show_dropdown ? {} : { display: 'none' }}
+              >
                 {this.state.kota_display.length
                   ? this.state.kota_display.map(item => (
                       <div
                         className='dropdown_item'
                         key={item}
-                        onClick={() => this.setState({ show_dropdown: false, city_value: item })}
+                        onClick={() =>
+                          this.setState({
+                            show_dropdown: false,
+                            city_value: item,
+                          })
+                        }
                       >
                         {item}
                       </div>
